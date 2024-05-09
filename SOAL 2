@@ -1,0 +1,19 @@
+# Mendefinisikan tuple data diri
+data_diri = ('Sharon Gamas', '1234567887654321', 'Kutai Barat, Kalimantan Timur')
+
+print("Data:")
+print("NIM :", data_diri[1])
+print("NAMA :", data_diri[0])
+print("ALAMAT :", data_diri[2])
+
+nim_tuple = tuple(data_diri[1])
+
+nama_depan_tuple = tuple(data_diri[0].split()[0])
+
+nama_belakang_list = data_diri[0].split()[1:]
+nama_belakang_list.reverse()
+nama_belakang_tuple = tuple(nama_belakang_list)
+
+print("NIM:", nim_tuple)
+print("NAMA DEPAN:", nama_depan_tuple)
+print("NAMA TERBALIK:", nama_belakang_tuple)
