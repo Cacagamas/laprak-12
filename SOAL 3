@@ -1,0 +1,33 @@
+from collections import defaultdict
+
+def count_hour_distribution(email_logs):
+
+    hour_distribution = defaultdict(int)
+
+   
+    for log_entry in email_logs:
+   
+        hour = log_entry.split()[1].split(':')[0]
+        
+        hour_distribution[hour] += 1
+
+    return hour_distribution
+
+email_logs = [
+    "user1@example.com 08:30:45",
+    "user2@example.com 12:15:20",
+    "user3@example.com 15:45:10",
+    "user4@example.com 18:20:05",
+    "user5@example.com 21:05:30",
+    "user6@example.com 09:40:15",
+    "user7@example.com 14:55:55",
+    "user8@example.com 19:10:25",
+    "user9@example.com 22:30:40",
+    "user10@example.com 07:20:50"
+]
+
+hour_distribution = count_hour_distribution(email_logs)
+
+print("Distribusi Jam dalam Satu Hari:")
+for hour, count in sorted(hour_distribution.items()):
+    print(f"Jam {hour}:00 - {hour}:59: {count} pesan")
